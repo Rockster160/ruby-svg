@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "svg/version"
+require_relative "ruby-svg/version"
 
 class SVG
   class Error < StandardError; end

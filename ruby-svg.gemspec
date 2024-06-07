@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/svg/version"
+require_relative "lib/ruby-svg/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ruby-svg"
