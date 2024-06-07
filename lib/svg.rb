@@ -95,31 +95,6 @@ class SVG
   end
   # <animate attributeName="|" attributeType="" begin="0" end="" from="" to="" dur="" repeatCount="" fill=""/>
 
-  def grid(minx=@minx, miny=@miny, width=@width, height=@height, **attrs, &block)
-    spacing = attrs.delete(:spacing) || 10
-    hardgrid = attrs.delete(:hardgrid) || 100
-    softcolor = attrs.delete(:softcolor) || :lightgrey
-    hardcolor = attrs.delete(:hardcolor) || :grey
-    attrs[:stroke_width] ||= 0.1
-
-    startx = (minx/spacing.to_f).floor*spacing
-    endx = ((minx+width)/spacing.to_f).ceil*spacing
-    starty = (miny/spacing.to_f).floor*spacing
-    endy = ((miny+height)/spacing.to_f).ceil*spacing
-
-    @items.prepend(SVG.new(:g, attrs: attrs) do |g|
-      startx.step(endx, spacing).each_with_index do |ox, xidx|
-        starty.step(endy, spacing).each_with_index do |oy, yidx|
-          xcolor = ox % hardgrid == 0 ? hardcolor : softcolor
-          g.line(ox, miny, ox, miny+height, stroke: xcolor)
-
-          ycolor = oy % hardgrid == 0 ? hardcolor : softcolor
-          g.line(minx, oy, minx+width, oy, stroke: ycolor)
-        end
-      end
-    end)
-  end
-
   def html_tag(tag, n, **attrs, &block)
     # TODO: Need to escape attr vals, in case they have quotes in them
     attr_str = attrs.map { |k,v| "#{k}=\"#{v}\"" }.join(" ")

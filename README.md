@@ -1,24 +1,37 @@
-# Ruby::Svg
+# SVG
 
-TODO: Delete this and the text below, and describe your gem
+An SVG generation wrapper for pure Ruby!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby/svg`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem simply allows your to build SVGs with Ruby syntax. The objects accessible are largely straight from SVGs and should be fairly intuitive, allowing you to build an SVG with Ruby syntax and logic in no time!
+
+You can even extend the SVG class to register your own svg types to give you shortcuts to generate your own components!
+
+Basic example:
+```ruby
+SVG.new(:svg) do |svg|
+  svg.minx = -5
+  svg.miny = -105
+  svg.width = 110
+  svg.height = 110
+
+  svg.circle(5, -5, 5)
+end
+```
+
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add ruby-svg
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install ruby-svg
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Development
 
@@ -28,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby-svg. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ruby-svg/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/Rockster160/ruby-svg. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/Rockster160/ruby-svg/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -36,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Ruby::Svg project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ruby-svg/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the SVG project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Rockster160/ruby-svg/blob/master/CODE_OF_CONDUCT.md).

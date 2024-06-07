@@ -1,6 +1,4 @@
-module Ruby
-  module Svg
-    VERSION: String
-    # See the writing guide of rbs: https://github.com/ruby/rbs#guides
-  end
+class SVG
+  VERSION: String
+  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
 end
