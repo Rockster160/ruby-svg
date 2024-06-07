@@ -8,7 +8,7 @@ class SVG
   attr_accessor(
     :filename, :tag, :attrs,
     :minx, :miny, :width, :height,
-    :items, :stroke, :fill
+    :items
   )
 
   def self.open(tag=:svg, opts={}, &block)
@@ -19,9 +19,9 @@ class SVG
     new(tag, opts, &block).write
   end
 
-  def self.register(method_name, &block)
-    define_method(method_name) do |*attrs|
-      block.call(self, *attrs)
+  def self.register(method_name, *arg_names, &block)
+    define_method(method_name) do |*arg_names, **attrs|
+      block.call(self, *arg_names, **attrs)
     end
   end
 
